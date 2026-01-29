@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Plugin Explanation & Example</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
+        .explanation { background: #f0f0f0; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+        .book-card { border: 1px solid #ccc; padding: 10px; margin: 5px 0; border-radius: 5px; background: #e8f5e9; }
+        h2 { border-bottom: 2px solid #4CAF50; padding-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+    <!-- SECTION 1: DISCUSSION (Theory) -->
+    <div class="explanation">
+        <h1>Topic: jQuery Plugins</h1>
+        
+        <h2>1. What is a Plugin? (Plugin kya hai?)</h2>
+        <p><strong>Simple Definition:</strong> Plugin ek aisa code ka tukda (function) hota hai jo jQuery ki taakat badhata hai. Jaise aap phone mein apps install karke naye features late hain, waise hi jQuery mein plugins jod kar naye features add kiye jate hain.</p>
+        
+        <h3>Key Points:</h3>
+        <ul>
+            <li><strong>Reusability:</strong> Ek baar code likho, baar-baar use karo.</li>
+            <li><strong>Extension:</strong> Ye jQuery ke <code>prototype</code> (jise <code>$.fn</code> kehte hain) ko extend karta hai.</li>
+            <li><strong>Easy Maintenance:</strong> Code alag file ya block mein rehta hai, toh main code saaf rehta hai.</li>
+        </ul>
+
+        <h2>2. Syntax (Banate kaise hain?)</h2>
+        <pre>
+$.fn.meraPluginName = function() {
+    // Yahan plugin ka logic likhte hain
+    // 'this' ka matlab wo element jispe plugin lagaya hai
+    return this; // Chaining ke liye
+};
+        </pre>
+    </div>
+
+    <!-- SECTION 2: PROGRAM (Code) -->
+    <h2>Example: Library Book Display Plugin</h2>
+    <p>Neeche diya gaya output ek custom plugin se aa raha hai:</p>
+    
+    <!-- Yahan Output dikhega -->
+    <div id="library-container"></div>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        // ==========================================
+        // 1. DATA (Library Details)
+        // ==========================================
+        const myBooks = [
+            { title: "The Alchemist", author: "Paulo Coelho", price: 300 },
+            { title: "Atomic Habits", author: "James Clear", price: 450 },
+            { title: "Rich Dad Poor Dad", author: "Robert Kiyosaki", price: 250 }
+        ];
+
+        // ==========================================
+        // 2. PLUGIN DEFINITION (Plugin banana)
+        // ==========================================
+        $.fn.showLibrary = function(booksData) {
+            // 'this' wo element hai jispe humne plugin call kiya (yahan #library-container)
+            var container = this;
+
+            // Har book ke liye loop chalayenge
+            booksData.forEach(function(book) {
+                // HTML banana
+                var bookHTML = `
+                    <div class="book-card">
+                        <h3>📖 ${book.title}</h3>
+                        <p><strong>Author:</strong> ${book.author}</p>
+                        <p><strong>Price:</strong> ₹${book.price}</p>
+                    </div>
+                `;
+                // Container mein daalna
+                container.append(bookHTML);
+            });
+
+            // Color style change kar dete hain taaki pata chale plugin ne kaam kiya
+            container.css("border", "2px solid green");
+            container.css("padding", "10px");
+
+            return this; // Chain continue karne ke liye
+        };
+
+        // ==========================================
+        // 3. USING THE PLUGIN (Plugin use karna)
+        // ==========================================
+        $(document).ready(function() {
+            // Plugin call kiya
+            $("#library-container").showLibrary(myBooks);
+        });
+
+    </script>
+</body>
+</html>

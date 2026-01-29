@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    
+    <title>Document</title>
+    <style>
+        .slider-container { width: 80%; margin: 50px auto; }
+        .slider img { width: 100%; height: 300px; object-fit: cover; border-radius: 10px; }
+        /* Navigation buttons ko saaf dikhane ke liye */
+        .slick-prev:before, .slick-next:before { color: black; font-size: 30px; }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Image Slider (Slick Plugin)</h1>
+    
+    <div class="slider-container">
+        <div class="slider">
+            <div><img src="https://picsum.photos/800/300?random=1" alt="Random Image 1"></div>
+            <div><img src="https://picsum.photos/800/300?random=2" alt="Random Image 2"></div>
+            <div><img src="https://picsum.photos/800/300?random=3" alt="Random Image 3"></div>
+            <div><img src="https://picsum.photos/800/300?random=4" alt="Random Image 4"></div>
+        </div>
+    </div>
+
+    <!-- jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick Slider Plugin JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
