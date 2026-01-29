@@ -1,0 +1,91 @@
+.name {
+    margin-top: 200px; /* Add space from the top */
+    text-align: center;
+    font-size: 2vw;
+    font-weight: 900;
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.4);
+}
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    
+    font-family: 'Orbitron', sans-serif;
+    background-image: url("img1.jpg");
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Black background */
+    color: #fff;           /* White text */
+    overflow: hidden;
+}
+
+/* Clock Container */
+.clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+/* Clock Text */
+#clock {
+    font-size: 12vw; /* Full-screen large font */
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    text-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 50px rgba(255, 255, 255, 0.4);
+    animation: pulse 1s infinite alternate;
+}
+
+/* Futuristic Glow Effect */
+@keyframes pulse {
+    0% {
+        text-shadow: 
+            0 0 20px rgba(255, 255, 255, 0.6),
+            0 0 50px rgba(255, 255, 255, 0.4);
+    }
+    100% {
+        text-shadow: 
+            0 0 30px rgba(255, 255, 255, 0.8),
+            0 0 60px rgba(255, 255, 255, 0.5);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .name {
+      font-size: xx-large;
+      margin-top: 175px;
+
+    }
+  }
+
+@media only screen and (max-width: 600px) {
+    #jai{
+      font-size: xx-large;
+      margin-top: 100px;
+      
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .clock-container{
+      font-size: xx-large;
+      margin-bottom: 200px;
+      
+    }
+  }
