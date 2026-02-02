@@ -10,6 +10,7 @@ async function fetchData(url){
              image.src=user.avatar_url;
              div.appendChild(image);
              const p = document.createElement("p") ;
+             p.style.color="blue";
              p.textContent=user.login;
              div.appendChild(p);    
             }
@@ -26,6 +27,5 @@ const data = fetchData(url);
 
 
 
- 
 
 
